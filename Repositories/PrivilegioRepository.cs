@@ -32,6 +32,7 @@ namespace Repositories
 
         public Privilegio Inserir(Privilegio privilegio)
         {
+            privilegio.RegistroAtivo = true;
             _context.Privilegios.Add(privilegio);
             _context.SaveChanges();
             return privilegio;

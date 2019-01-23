@@ -1,7 +1,39 @@
 ﻿
 @{
     ViewBag.Title = "Index";
+    @Model List<Models.Privilegio> privilegios = (List<Models.Privilegio>)@ViewBag.Privilegios;
 }
 
-<h2>Index</h2>
+<h4>lista de Privilegios</h4>
+
+<a class="btn btn-outline-dark mb-2 float-lg-right" href="@Url.Action("Cadastro", "Privilegio")">Cadastrar</a>
+
+<table class="table table-hover table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Privilegio</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var privilegio in privilegios)
+        {
+            <tr>
+                <td>@privilegio.Id</td>
+                <td>@privilegio.Nome</td>
+                <td>
+                    <a href="@Url.Action(/*actionName:*/ "Delete", /*controllerName:*/ "Privilegio" , /*routeValues:*/ new { id = privilegio.Id })">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <foot>
+        <tr>
+            <th>Codigo</th>
+            <th>Privilegio</th>
+            <th>Ação</th>
+        </tr>
+    </foot>
+</table>
 

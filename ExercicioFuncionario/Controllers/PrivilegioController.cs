@@ -1,4 +1,5 @@
-﻿using Repositories;
+﻿using Models;
+using Repositories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,26 @@ namespace ExercicioFuncionario.Controllers
             var privilegios = _repository.ObterTodos();
             ViewBag.Privilegios = privilegios;
             return View();
+        }
+
+        public ActionResult Cadastro()
+        {
+            List<Privilegio> privilegios = new PrivilegioRepository().ObterTodos();
+            ViewBag.Privilegios = privilegios;
+            return View();
+        }
+
+        public ActionResult Store(Privilegio privilegio)
+        {
+            _repository.Inserir(privilegio);
+            return RedirectToAction("Index");
+            
+        }
+
+        public ActionResult Delete(int id)
+        {
+            _repository.Apagar(id);
+            return RedirectToAction("Index");
         }
     }
 }

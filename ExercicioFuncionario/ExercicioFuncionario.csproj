@@ -219,6 +219,7 @@
     <Content Include="Views\Funcionario\Index.cshtml" />
     <Content Include="Views\Privilegio\Index.cshtml" />
     <Content Include="Views\Funcionario\Cadastro.cshtml" />
+    <Content Include="Views\Privilegio\Cadastro.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

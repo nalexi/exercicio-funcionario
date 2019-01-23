@@ -21,7 +21,7 @@ namespace Repositories
         public List<Funcionario> ObterTodos()
         {
             List<Funcionario> funcionarios = _context.Funcionarios.Where(x => x.RegistroAtivo == true).ToList();
-            return _context.Funcionarios.ToList();
+            return funcionarios;
         }
 
         public Funcionario ObterPeloId(int id)
@@ -32,8 +32,8 @@ namespace Repositories
 
         public Funcionario Inserir(Funcionario funcionario)
         {
+            funcionario.RegistroAtivo = true;
             _context.Funcionarios.Add(funcionario);
-            _context.Funcionarios(funcionario.RegistroAtivo = true);
             _context.SaveChanges();
             return funcionario;
         }

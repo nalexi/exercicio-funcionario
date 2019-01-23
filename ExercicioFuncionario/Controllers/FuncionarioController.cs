@@ -42,6 +42,8 @@ namespace ExercicioFuncionario.Controllers
             _repository.Apagar(id);
             
             return RedirectToAction("Index");
-        } 
+        }
+        
+
     }
 }
