@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro";
+}
+
+<h4>Cadastro de Funcionario</h4>
+
+<form method="post" action="@Url.Action("Store")">
+
+    <div class="form-group">
+        <label for="cadastro-funcionario-privilegio">Privilegio</label>
+        <select id="cadastro-funcionario-privilegio" name="funcionario.PrivilegioId" class="form-control">
+            @foreach (Models.Privilegio privilegio in ViewBag.Privilegios)
+            {
+                <option value="@privilegio.Id">@privilegio.Nome</option>
+
+            }
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="cadastro-funcionario-nome">Nome</label>
+        <input type="text" id="cadastro-funcionario-nome" name="funcionario.Nome" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="cadastro-funcionario-Login">Login</label>
+        <input type="text" id="cadastro-funcionario-login" name="funcionario.Login" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="cadastro-funcionario-senha">Senha</label>
+        <input type="password" id="cadastro-funcionario-senha" name="funcionario.Senha" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="cadastro-funcionario-sexo">Sexo</label>
+        <input type="text" id="cadastro-funcionario-sexo" name="funcionario.sexo" class="form-control" />
+    </div>
+    <div class="form-group">
+        <label for="cadastro-funcionario-salario">Salario</label>
+        <input type="text" id="cadastro-funcionario-salario" name="funcionario.salario" class="form-control" />
+    </div>
+    <input type="hidden" name="funcionario.RegistroAtivo" value= true />
+
+    <button type="submit" class="btn btn-success">Salvar</button>
+
+</form>
+

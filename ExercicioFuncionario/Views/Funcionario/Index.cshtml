@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    @Model List<Models.Funcionario> funcionarios = (List<Models.Funcionario>)@ViewBag.Funcionarios;
+}
+
+<h4>lista de Funcionarios</h4>
+
+<a href="@Url.Action("Cadastro", "Funcionario")">Cadastrar</a>
+
+<table class="table table-hover table-striped table-bordered">
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Privilegio</th>
+            <th>Nome</th>
+            <th>Login</th>
+            <th>Senha</th>
+            <th>Sexo</th>
+            <th>Salario</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var funcionario in funcionarios)
+        {
+            <tr>
+                <td>@funcionario.Id</td>
+                <td>@funcionario.Privilegio.Nome</td>
+                <td>@funcionario.Nome</td>
+                <td>@funcionario.Login</td>
+                <td>@funcionario.Senha</td>
+                <td>@funcionario.Sexo</td>
+                <td>@funcionario.Salario</td>
+                <td>
+                    <a href="@Url.Action(/*actionName:*/ "Delete", /*controllerName:*/ "Funcionario" , /*routeValues:*/ new { id = funcionario.Id })">Apagar</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+    <foot>
+        <tr>
+            <th>Codigo</th>
+            <th>Privilegio</th>
+            <th>Nome</th>
+            <th>Login</th>
+            <th>Senha</th>
+            <th>Sexo</th>
+            <th>Salario</th>
+            <th>Ação</th>
+        </tr>
+    </foot>
+</table>
+
