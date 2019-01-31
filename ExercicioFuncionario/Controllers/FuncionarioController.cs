@@ -26,12 +26,12 @@ namespace ExercicioFuncionario.Controllers
         }
 
         [HttpGet]
-        public JsonResult ObterDataTable(int start, int length, Dictionary<string, string> search,
+        public JsonResult ObterDataTable(int idPrivilegio, int start, int length, Dictionary<string, string> search,
             Dictionary<string, Dictionary<string, string>> order, int draw)
         {
-            var funcionarios = _repository.ObterParaDataTable(start, length, search, order);
+            var funcionarios = _repository.ObterParaDataTable(idPrivilegio, start, length, search, order);
             var quantidadeTotal = _repository.ContabilizarTotalDataTable();
-            var quantidadeFiltrado = _repository.ContabilizarFiltradoDataTable(search);
+            var quantidadeFiltrado = _repository.ContabilizarFiltradoDataTable(idPrivilegio, search);
 
             var retorno = new
             {

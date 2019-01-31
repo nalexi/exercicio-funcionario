@@ -1,13 +1,21 @@
-﻿@{ 
+﻿@{
     ViewBag.Title = "Index";
-    @Model List<Models.Funcionario> funcionarios = (List<Models.Funcionario>)ViewBag.Funcionarios; 
+    @Model List<Models.Funcionario> funcionarios = (List<Models.Funcionario>)ViewBag.Funcionarios;
 }
-    
+
 @section scripts {
     <script src="~/Scripts/funcionario/index.js"></script>
 }
 
 <h4>lista de Funcionarios</h4>
+
+<div class="form-group">
+    <label for="cadastro-funcionario-privilegio">Privilegio</label>
+    <select id="cadastro-funcionario-privilegio" name="funcionario.PrivilegioId" class="form-control">
+        <option value="-1" selected="selected">Apresentar Todos</option>
+    </select>
+</div>
+
 
 <table id="tabela-funcionarios" class="table table-hover table-striped table-bordered">
     <thead>

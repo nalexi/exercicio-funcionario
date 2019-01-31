@@ -1,7 +1,21 @@
 ﻿$(function () {
+    $("#cadastro-funcionario-privilegio").select2({
+        ajax: {
+            url: '/privilegio/obtertodosparajson',
+            dataType: 'json'
+        }
+    }).on('select2:select', function (e) {
+        $("#tabela-funcionarios").DataTable().ajax.reload();
+    })
+
     $("#tabela-funcionarios").DataTable({
         "serverSide": true,
-        "ajax": "/funcionario/ObterDataTable",
+        "ajax": {
+            "url": "/funcionario/ObterDataTable",
+             "data": function (d) {
+                d.idPrivilegio = $("#cadastro-funcionario-privilegio").val();
+            },
+        },
         "columns": [
             { "data": "Id", "name": "id" },
             { "data": "Privilegio.Nome", "name": "privilegio" },
@@ -44,4 +58,5 @@
             }
         }
     });
+
 });

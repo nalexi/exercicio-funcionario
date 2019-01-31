@@ -38,10 +38,15 @@ namespace Repositories
             return funcionario;
         }
 
-        public List<Funcionario> ObterParaDataTable(int start, int length, Dictionary<string, string> search,
+        public List<Funcionario> ObterParaDataTable(int idPrivilegio, int start, int length, Dictionary<string, string> search,
             Dictionary<string, Dictionary<string, string>> order)
         {
             var query = _context.Funcionarios.Where(x => x.RegistroAtivo).AsQueryable();
+
+            if(idPrivilegio != Privilegio.FiltroApresentarTodos)
+            {
+                query = query.Where(x => x.PrivilegioId == idPrivilegio);
+            }
 
             query = OrdenacaoDatatable(order, query);
             query = BuscaDataTable(search, query);
@@ -49,9 +54,15 @@ namespace Repositories
             return query.Skip(start).Take(length).ToList();
         }
 
-        public object ContabilizarFiltradoDataTable(Dictionary<string, string> search)
+        public object ContabilizarFiltradoDataTable(int idPrivilegio, Dictionary<string, string> search)
         {
-            var query = _context.Funcionarios.Where(x => x.RegistroAtivo).AsQueryable();
+            var query = _context.Funcionarios.Where(x => x.RegistroAtivo && x.PrivilegioId == idPrivilegio).AsQueryable();
+
+            if (idPrivilegio != Privilegio.FiltroApresentarTodos)
+            {
+                query = query.Where(x => x.PrivilegioId == idPrivilegio);
+            }
+
             query = BuscaDataTable(search, query);
             return query.Count();
         }

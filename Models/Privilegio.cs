@@ -11,6 +11,8 @@ namespace Models
     public class Privilegio : Base
     {
 
+        public const int FiltroApresentarTodos = -1;
+
         [Column("nome")]
         public string Nome { get; set; }
 

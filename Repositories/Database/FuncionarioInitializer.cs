@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Repositories.Database
 {
-    public class FuncionarioInitializer : DropCreateDatabaseAlways<FuncionarioContext>
+    public class FuncionarioInitializer : CreateDatabaseIfNotExists<FuncionarioContext>
     {
         protected override void Seed(FuncionarioContext context)
         {
@@ -34,8 +34,8 @@ namespace Repositories.Database
             };
 
             context.Funcionarios.Add(funcionario);
-            //context.Funcionarios.Add(new Funcionario() { Nome = "voces", PrivilegioId = 1, Login = "abc", Senha = "abc", Sexo = "f", Salario = 0, RegistroAtivo = true });
-            //context.Funcionarios.Add(new Funcionario() { Nome = "todos", PrivilegioId = 1, Login = "sadsad", Senha = "saddas", Sexo = "f", Salario = 500, RegistroAtivo = true });
+            context.Funcionarios.Add(new Funcionario() { Nome = "voces", PrivilegioId = 1, Login = "abc", Senha = "abc", Sexo = "f", Salario = 0, RegistroAtivo = true });
+            context.Funcionarios.Add(new Funcionario() { Nome = "todos", PrivilegioId = 1, Login = "sadsad", Senha = "saddas", Sexo = "f", Salario = 500, RegistroAtivo = true });
 
 
 
