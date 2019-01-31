@@ -10,7 +10,7 @@ namespace Models
     [Table("funcionarios")]
     public class Funcionario : Base
     {
-        [ForeignKey("Privilegio"), Column("id_privilegio")]
+        [Column("id_privilegio"), ForeignKey("Privilegio")]
         public int PrivilegioId { get; set; }
 
         public virtual Privilegio Privilegio { get; set; }

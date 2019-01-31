@@ -21,7 +21,13 @@ namespace Repositories
         public List<Privilegio> ObterTodos()
         {
             List<Privilegio> privilegios = _context.Privilegios.Where(x => x.RegistroAtivo).ToList();
+
             return privilegios;
+        }
+
+        public Object ObterTodosParaJson()
+        {
+            return _context.Privilegios.OrderBy(x => x.Nome).Select(x => new { id = x.Id, text = x.Nome });
         }
 
         public Privilegio ObterPeloId(int id)
@@ -48,5 +54,7 @@ namespace Repositories
             _context.SaveChanges();
             return true;
         }
+
+        
     }
 }

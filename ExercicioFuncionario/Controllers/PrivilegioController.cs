@@ -24,6 +24,14 @@ namespace ExercicioFuncionario.Controllers
             return View();
         }
 
+        [HttpGet]
+        public JsonResult ObterTodosParaJson()
+        {
+            object privilegios = new PrivilegioRepository().ObterTodosParaJson();
+            return Json(new { results = privilegios }, JsonRequestBehavior.AllowGet);
+
+        }
+
         public ActionResult Cadastro()
         {
             List<Privilegio> privilegios = new PrivilegioRepository().ObterTodos();

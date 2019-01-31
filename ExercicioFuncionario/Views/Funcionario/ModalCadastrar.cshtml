@@ -1,0 +1,69 @@
+﻿@{
+    @Model List<Models.Privilegio> privilegios = (List<Models.Privilegio>)@ViewBag.Privilegios;
+}
+
+<div class="modal fade " id="modal-cadastro-funcionario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cadastrar Funcionario</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+
+            </div>
+            <div class="modal-body">
+                <div class="form-group">
+                    <label for="modal-cadastro-funcionario-privilegio">Privilegio</label>
+                    <select class="form-control" name="funcionario.PrivilegioId" id="modal-cadastro-funcionario-privilegio">
+                        @foreach (Models.Privilegio privilegio in privilegios)
+                        {
+                            <option value="@privilegio.Id">@privilegio.Nome</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="modal-cadastro-funcionario-nome">Nome</label>
+                    <input type="text" id="modal-cadastro-funcionario-nome" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="modal-cadastro-funcionario-login">login</label>
+                    <input type="text" id="modal-cadastro-funcionario-login" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label for="modal-cadastro-funcionario-senha">Senha</label>
+                    <input type="password" id="modal-cadastro-funcionario-senha" class="form-control" />
+                </div>
+                <!--<div class="form-group">
+                    <label>Sexo</label>
+                    <input type="radio" id="modal-cadastro-funcionario-sexo-masculino" name="campo-sexo" class="form-control" />
+                    <label for="modal-cadastro-funcionario-sexo-masculino">Masculino</label>
+                </div>
+                <div class="form-group">
+                    <label for="modal-cadastro-funcionario-sexo-feminino">Feminino</label>
+                    <input type="radio" id="modal-cadastro-funcionario-sexo-feminino" name="campo-sexo" class="form-control" />
+                </div>-->
+
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="modal-cadastro-funcionario-sexo-masculino" value="Masculino">
+                    <label class="form-check-label" for="modal-cadastro-funcionario-sexo-masculino">Masculino</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="exampleRadios" id="modal-cadastro-funcionario-sexo-feminino" value="Feminino">
+                    <label class="form-check-label" for="modal-cadastro-funcionario-sexo-feminino">Feminino</label>
+                </div>
+
+                <div class="form-group">
+                    <label for="modal-cadastro-funcionario-salario">Salario</label>
+                    <input type="number" id="modal-cadastro-funcionario-salario" class="form-control" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-success" id="modal-cadastro-funcionario-salvar">Salvar</button>
+            </div>
+        </div>
+    </div>
+</div>
+

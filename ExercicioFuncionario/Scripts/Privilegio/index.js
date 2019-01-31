@@ -1,0 +1,3 @@
+﻿$(function () {
+    $("#tabela-privilegios").DataTable()
+});

@@ -38,6 +38,80 @@ namespace Repositories
             return funcionario;
         }
 
+        public List<Funcionario> ObterParaDataTable(int start, int length, Dictionary<string, string> search,
+            Dictionary<string, Dictionary<string, string>> order)
+        {
+            var query = _context.Funcionarios.Where(x => x.RegistroAtivo).AsQueryable();
+
+            query = OrdenacaoDatatable(order, query);
+            query = BuscaDataTable(search, query);
+
+            return query.Skip(start).Take(length).ToList();
+        }
+
+        public object ContabilizarFiltradoDataTable(Dictionary<string, string> search)
+        {
+            var query = _context.Funcionarios.Where(x => x.RegistroAtivo).AsQueryable();
+            query = BuscaDataTable(search, query);
+            return query.Count();
+        }
+
+        public object ContabilizarTotalDataTable()
+        {
+            return _context.Funcionarios.Count(x => x.RegistroAtivo);
+        }
+
+        private IQueryable<Funcionario> BuscaDataTable(Dictionary<string, string> search, IQueryable<Funcionario> query)
+        {
+            var busca = search["value"];
+            if (busca != "")
+            {
+                query = query.Where(x => x.Privilegio.Nome.Contains(busca) || (x.Nome.Contains(busca)));
+            }
+            return query;
+        }
+
+        private IQueryable<Funcionario> OrdenacaoDatatable(Dictionary<string, Dictionary<string, string>> order, IQueryable<Funcionario> query)
+        {
+            if (order["0"]["dir"] == "asc")
+            {
+                switch (order["0"]["column"])
+                {
+                    case "0":
+                        query = query.OrderBy(x => x.Id);
+                        break;
+                    case "1":
+                        query = query.OrderBy(x => x.Privilegio.Nome).ThenBy(x => x.Nome);
+                        break;
+                    case "2":
+                        query = query.OrderBy(x => x.Nome);
+                        break;
+                    default:
+                        query = query.OrderBy(x => x.Nome);
+                        break;
+                }
+            }
+            else
+            {
+                switch (order["0"]["column"])
+                {
+                    case "0":
+                        query = query.OrderByDescending(x => x.Id);
+                        break;
+                    case "1":
+                        query = query.OrderByDescending(x => x.Privilegio.Nome).ThenBy(x => x.Nome);
+                        break;
+                    case "2":
+                        query = query.OrderByDescending(x => x.Nome);
+                        break;
+                    default:
+                        query = query.OrderByDescending(x => x.Nome);
+                        break;
+                }
+            }
+            return query;
+        }
+
         public bool Apagar(int id)
         {
             var func = _context.Funcionarios.FirstOrDefault(x => x.Id == id && x.RegistroAtivo == true);
@@ -48,5 +122,12 @@ namespace Repositories
             _context.SaveChanges();
             return true;
         }
+
+        public void Alterar(Funcionario funcionario)
+        {
+            _context.Funcionarios.AddOrUpdate(funcionario);
+            _context.SaveChanges();
+        }
+
     }
 }

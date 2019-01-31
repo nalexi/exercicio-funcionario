@@ -53,7 +53,25 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib, Version=1.0.0.999, Culture=neutral, PublicKeyToken=1b03e6acf1164f73, processorArchitecture=MSIL">
+      <HintPath>..\packages\SharpZipLib.1.0.0\lib\net45\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.4.1\lib\net45\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.4.1\lib\net45\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.4.1\lib\net45\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats, Version=2.4.1.0, Culture=neutral, PublicKeyToken=0df73ec7942b34e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\NPOI.2.4.1\lib\net45\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -107,9 +125,6 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.4\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.11.0.1\lib\net45\Newtonsoft.Json.dll</HintPath>
-    </Reference>
     <Reference Include="WebGrease">
       <Private>True</Private>
       <HintPath>..\packages\WebGrease.1.6.0\lib\WebGrease.dll</HintPath>
@@ -143,56 +158,284 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\bootstrap-grid.css" />
-    <Content Include="Content\bootstrap-grid.min.css" />
-    <Content Include="Content\bootstrap-reboot.css" />
-    <Content Include="Content\bootstrap-reboot.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="App_Data\SqlServerConnection1.mdf" />
+    <Content Include="App_Data\SqlServerConnection1_log.ldf">
+      <DependentUpon>SqlServerConnection1.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\bootstrap\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap\bootstrap.css" />
+    <Content Include="Content\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\DataTable\bootstrap\dataTables.bootstrap.css" />
+    <Content Include="Content\DataTable\bootstrap\dataTables.bootstrap.min.css" />
+    <Content Include="Content\DataTable\bootstrap\dataTables.bootstrap4.css" />
+    <Content Include="Content\DataTable\bootstrap\dataTables.bootstrap4.min.css" />
+    <Content Include="Content\DataTable\bootstrap\dataTables.foundation.css" />
+    <Content Include="Content\DataTable\bootstrap\dataTables.foundation.min.css" />
+    <Content Include="Content\DataTable\bootstrap\dataTables.jqueryui.css" />
+    <Content Include="Content\DataTable\bootstrap\dataTables.jqueryui.min.css" />
+    <Content Include="Content\DataTable\bootstrap\dataTables.semanticui.css" />
+    <Content Include="Content\DataTable\bootstrap\dataTables.semanticui.min.css" />
+    <Content Include="Content\DataTable\bootstrap\jquery.dataTables.css" />
+    <Content Include="Content\DataTable\bootstrap\jquery.dataTables.min.css" />
+    <Content Include="Content\DataTable\datatables.css" />
+    <Content Include="Content\DataTable\datatables.min.css" />
+    <Content Include="Content\font-awesome.css" />
+    <Content Include="Content\font-awesome.min.css" />
+    <Content Include="Content\select2\select2.css" />
+    <Content Include="Content\select2\select2.min.css" />
     <Content Include="favicon.ico" />
+    <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
-    <Content Include="Scripts\bootstrap.bundle.js" />
-    <Content Include="Scripts\bootstrap.bundle.min.js" />
-    <Content Include="Scripts\bootstrap.js" />
-    <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\esm\popper-utils.js" />
-    <Content Include="Scripts\esm\popper-utils.min.js" />
-    <Content Include="Scripts\esm\popper.js" />
-    <Content Include="Scripts\esm\popper.min.js" />
-    <Content Include="Scripts\esm\popper.min.js.map" />
-    <Content Include="Scripts\esm\popper.js.map" />
-    <Content Include="Scripts\esm\popper-utils.min.js.map" />
-    <Content Include="Scripts\esm\popper-utils.js.map" />
-    <Content Include="Scripts\bootstrap.min.js.map" />
-    <Content Include="Scripts\bootstrap.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
-    <Content Include="Scripts\bootstrap.bundle.js.map" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-reboot.min.css.map" />
-    <Content Include="Content\bootstrap-reboot.css.map" />
-    <Content Include="Content\bootstrap-grid.min.css.map" />
-    <Content Include="Content\bootstrap-grid.css.map" />
-    <None Include="Scripts\jquery-3.3.1.intellisense.js" />
-    <Content Include="Scripts\jquery-3.3.1.js" />
-    <Content Include="Scripts\jquery-3.3.1.min.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.js" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
-    <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery.validate.js" />
-    <Content Include="Scripts\jquery.validate.min.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
-    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Scripts\popper-utils.js" />
-    <Content Include="Scripts\popper-utils.min.js" />
-    <Content Include="Scripts\popper.js" />
-    <Content Include="Scripts\popper.min.js" />
-    <Content Include="Scripts\umd\popper-utils.js" />
-    <Content Include="Scripts\umd\popper-utils.min.js" />
-    <Content Include="Scripts\umd\popper.js" />
-    <Content Include="Scripts\umd\popper.min.js" />
+    <Content Include="Scripts\Libs\bootstrap\bootstrap.bundle.js" />
+    <Content Include="Scripts\Libs\bootstrap\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\Libs\bootstrap\bootstrap.js" />
+    <Content Include="Scripts\Libs\bootstrap\bootstrap.min.js" />
+    <Content Include="Scripts\Libs\dataTable\bootstrap\dataTables.bootstrap.js" />
+    <Content Include="Scripts\Libs\dataTable\bootstrap\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\Libs\dataTable\bootstrap\dataTables.bootstrap4.js" />
+    <Content Include="Scripts\Libs\dataTable\bootstrap\dataTables.bootstrap4.min.js" />
+    <Content Include="Scripts\Libs\dataTable\bootstrap\dataTables.foundation.js" />
+    <Content Include="Scripts\Libs\dataTable\bootstrap\dataTables.foundation.min.js" />
+    <Content Include="Scripts\Libs\dataTable\bootstrap\dataTables.jqueryui.js" />
+    <Content Include="Scripts\Libs\dataTable\bootstrap\dataTables.jqueryui.min.js" />
+    <Content Include="Scripts\Libs\dataTable\bootstrap\dataTables.semanticui.js" />
+    <Content Include="Scripts\Libs\dataTable\bootstrap\dataTables.semanticui.min.js" />
+    <Content Include="Scripts\Libs\dataTable\bootstrap\jquery.dataTables.js" />
+    <Content Include="Scripts\Libs\dataTable\bootstrap\jquery.dataTables.min.js" />
+    <Content Include="Scripts\Libs\dataTable\datatables.js" />
+    <Content Include="Scripts\Libs\dataTable\datatables.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\additional-methods.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\additional-methods.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\jquery.validate.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\jquery.validate.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_ar.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_ar.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_az.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_az.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_bg.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_bg.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_bn_BD.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_bn_BD.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_ca.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_ca.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_cs.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_cs.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_da.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_da.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_de.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_de.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_el.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_el.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_es.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_es.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_es_AR.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_es_AR.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_es_PE.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_es_PE.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_et.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_et.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_eu.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_eu.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_fa.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_fa.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_fi.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_fi.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_fr.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_fr.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_ge.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_ge.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_gl.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_gl.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_he.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_he.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_hr.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_hr.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_hu.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_hu.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_hy_AM.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_hy_AM.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_id.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_id.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_is.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_is.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_it.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_it.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_ja.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_ja.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_ka.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_ka.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_kk.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_kk.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_ko.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_ko.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_lt.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_lt.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_lv.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_lv.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_mk.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_mk.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_my.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_my.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_nl.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_nl.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_no.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_no.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_pl.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_pl.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_pt_BR.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_pt_BR.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_pt_PT.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_pt_PT.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_ro.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_ro.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_ru.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_ru.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_sd.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_sd.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_si.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_si.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_sk.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_sk.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_sl.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_sl.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_sr.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_sr.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_sr_lat.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_sr_lat.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_sv.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_sv.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_th.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_th.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_tj.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_tj.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_tr.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_tr.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_uk.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_uk.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_ur.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_ur.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_vi.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_vi.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_zh.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_zh.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_zh_TW.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\messages_zh_TW.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\methods_de.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\methods_de.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\methods_es_CL.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\methods_es_CL.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\methods_fi.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\methods_fi.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\methods_it.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\methods_it.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\methods_nl.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\methods_nl.min.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\methods_pt.js" />
+    <Content Include="Scripts\Libs\jQueryValidation\localization\methods_pt.min.js" />
+    <Content Include="Scripts\Libs\popper\esm\popper-utils.js" />
+    <Content Include="Scripts\Libs\popper\esm\popper-utils.min.js" />
+    <Content Include="Scripts\Libs\popper\esm\popper.js" />
+    <Content Include="Scripts\Libs\popper\esm\popper.min.js" />
+    <Content Include="Scripts\Libs\popper\esm\popper.min.js.map" />
+    <Content Include="Scripts\Libs\popper\esm\popper.js.map" />
+    <Content Include="Scripts\Libs\popper\esm\popper-utils.min.js.map" />
+    <Content Include="Scripts\Libs\popper\esm\popper-utils.js.map" />
+    <Content Include="Scripts\Libs\bootstrap\bootstrap.min.js.map" />
+    <Content Include="Scripts\Libs\bootstrap\bootstrap.js.map" />
+    <Content Include="Scripts\Libs\bootstrap\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\Libs\bootstrap\bootstrap.bundle.js.map" />
+    <Content Include="fonts\FontAwesome.otf" />
+    <Content Include="fonts\fontawesome-webfont.woff2" />
+    <Content Include="fonts\fontawesome-webfont.woff" />
+    <Content Include="fonts\fontawesome-webfont.ttf" />
+    <Content Include="fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\bootstrap\bootstrap-grid.css.map" />
+    <Content Include="Content\bootstrap\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap\bootstrap.css.map" />
+    <Content Include="Content\bootstrap\bootstrap.min.css.map" />
+    <None Include="Scripts\Libs\jquery\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\funcionario\Cadastro.js" />
+    <Content Include="Scripts\funcionario\index.js" />
+    <Content Include="Scripts\Libs\select2\i18n\af.js" />
+    <Content Include="Scripts\Libs\select2\i18n\ar.js" />
+    <Content Include="Scripts\Libs\select2\i18n\az.js" />
+    <Content Include="Scripts\Libs\select2\i18n\bg.js" />
+    <Content Include="Scripts\Libs\select2\i18n\bs.js" />
+    <Content Include="Scripts\Libs\select2\i18n\ca.js" />
+    <Content Include="Scripts\Libs\select2\i18n\cs.js" />
+    <Content Include="Scripts\Libs\select2\i18n\da.js" />
+    <Content Include="Scripts\Libs\select2\i18n\de.js" />
+    <Content Include="Scripts\Libs\select2\i18n\dsb.js" />
+    <Content Include="Scripts\Libs\select2\i18n\el.js" />
+    <Content Include="Scripts\Libs\select2\i18n\en.js" />
+    <Content Include="Scripts\Libs\select2\i18n\es.js" />
+    <Content Include="Scripts\Libs\select2\i18n\et.js" />
+    <Content Include="Scripts\Libs\select2\i18n\eu.js" />
+    <Content Include="Scripts\Libs\select2\i18n\fa.js" />
+    <Content Include="Scripts\Libs\select2\i18n\fi.js" />
+    <Content Include="Scripts\Libs\select2\i18n\fr.js" />
+    <Content Include="Scripts\Libs\select2\i18n\gl.js" />
+    <Content Include="Scripts\Libs\select2\i18n\he.js" />
+    <Content Include="Scripts\Libs\select2\i18n\hi.js" />
+    <Content Include="Scripts\Libs\select2\i18n\hr.js" />
+    <Content Include="Scripts\Libs\select2\i18n\hsb.js" />
+    <Content Include="Scripts\Libs\select2\i18n\hu.js" />
+    <Content Include="Scripts\Libs\select2\i18n\hy.js" />
+    <Content Include="Scripts\Libs\select2\i18n\id.js" />
+    <Content Include="Scripts\Libs\select2\i18n\is.js" />
+    <Content Include="Scripts\Libs\select2\i18n\it.js" />
+    <Content Include="Scripts\Libs\select2\i18n\ja.js" />
+    <Content Include="Scripts\Libs\select2\i18n\km.js" />
+    <Content Include="Scripts\Libs\select2\i18n\ko.js" />
+    <Content Include="Scripts\Libs\select2\i18n\lt.js" />
+    <Content Include="Scripts\Libs\select2\i18n\lv.js" />
+    <Content Include="Scripts\Libs\select2\i18n\mk.js" />
+    <Content Include="Scripts\Libs\select2\i18n\ms.js" />
+    <Content Include="Scripts\Libs\select2\i18n\nb.js" />
+    <Content Include="Scripts\Libs\select2\i18n\nl.js" />
+    <Content Include="Scripts\Libs\select2\i18n\pl.js" />
+    <Content Include="Scripts\Libs\select2\i18n\ps.js" />
+    <Content Include="Scripts\Libs\select2\i18n\pt-BR.js" />
+    <Content Include="Scripts\Libs\select2\i18n\pt.js" />
+    <Content Include="Scripts\Libs\select2\i18n\ro.js" />
+    <Content Include="Scripts\Libs\select2\i18n\ru.js" />
+    <Content Include="Scripts\Libs\select2\i18n\sk.js" />
+    <Content Include="Scripts\Libs\select2\i18n\sl.js" />
+    <Content Include="Scripts\Libs\select2\i18n\sr-Cyrl.js" />
+    <Content Include="Scripts\Libs\select2\i18n\sr.js" />
+    <Content Include="Scripts\Libs\select2\i18n\sv.js" />
+    <Content Include="Scripts\Libs\select2\i18n\th.js" />
+    <Content Include="Scripts\Libs\select2\i18n\tr.js" />
+    <Content Include="Scripts\Libs\select2\i18n\uk.js" />
+    <Content Include="Scripts\Libs\select2\i18n\vi.js" />
+    <Content Include="Scripts\Libs\select2\i18n\zh-CN.js" />
+    <Content Include="Scripts\Libs\select2\i18n\zh-TW.js" />
+    <Content Include="Scripts\Libs\jquery\jquery-3.3.1.js" />
+    <Content Include="Scripts\Libs\jquery\jquery-3.3.1.min.js" />
+    <Content Include="Scripts\Libs\jquery\jquery-3.3.1.slim.js" />
+    <Content Include="Scripts\Libs\jquery\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\Libs\jquery\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\Libs\jquery\jquery.validate.js" />
+    <Content Include="Scripts\Libs\jquery\jquery.validate.min.js" />
+    <Content Include="Scripts\Libs\jquery\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\Libs\jquery\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Libs\jquery\modernizr-2.8.3.js" />
+    <Content Include="Scripts\Libs\popper\popper-utils.js" />
+    <Content Include="Scripts\Libs\popper\popper-utils.min.js" />
+    <Content Include="Scripts\Libs\popper\popper.js" />
+    <Content Include="Scripts\Libs\popper\popper.min.js" />
+    <Content Include="Scripts\Libs\select2\select2.js" />
+    <Content Include="Scripts\Libs\select2\select2.min.js" />
+    <Content Include="Scripts\Libs\popper\umd\popper-utils.js" />
+    <Content Include="Scripts\Libs\popper\umd\popper-utils.min.js" />
+    <Content Include="Scripts\Libs\popper\umd\popper.js" />
+    <Content Include="Scripts\Libs\popper\umd\popper.min.js" />
+    <Content Include="Scripts\Privilegio\index.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -207,36 +450,41 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Scripts\umd\popper.min.js.map" />
-    <Content Include="Scripts\umd\popper.js.map" />
-    <Content Include="Scripts\umd\popper-utils.min.js.map" />
-    <Content Include="Scripts\umd\popper-utils.js.map" />
-    <Content Include="Scripts\README.md" />
-    <Content Include="Scripts\popper.min.js.map" />
-    <Content Include="Scripts\popper.js.map" />
-    <Content Include="Scripts\popper-utils.min.js.map" />
-    <Content Include="Scripts\popper-utils.js.map" />
+    <Content Include="Scripts\Libs\popper\umd\popper.min.js.map" />
+    <Content Include="Scripts\Libs\popper\umd\popper.js.map" />
+    <Content Include="Scripts\Libs\popper\umd\popper-utils.min.js.map" />
+    <Content Include="Scripts\Libs\popper\umd\popper-utils.js.map" />
+    <Content Include="Scripts\Libs\popper\README.md" />
+    <Content Include="Scripts\Libs\popper\popper.min.js.map" />
+    <Content Include="Scripts\Libs\popper\popper.js.map" />
+    <Content Include="Scripts\Libs\popper\popper-utils.min.js.map" />
+    <Content Include="Scripts\Libs\popper\popper-utils.js.map" />
     <Content Include="Views\Funcionario\Index.cshtml" />
     <Content Include="Views\Privilegio\Index.cshtml" />
-    <Content Include="Views\Funcionario\Cadastro.cshtml" />
+    <Content Include="Views\Funcionario\ModalCadastrar.cshtml" />
     <Content Include="Views\Privilegio\Cadastro.cshtml" />
+    <Content Include="Views\Funcionario\ModalEditar.cshtml" />
+    <Content Include="Views\Funcionario\Cadastro.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
-    <Content Include="Scripts\jquery-3.3.1.min.map" />
+    <Content Include="Scripts\Libs\jquery\jquery-3.3.1.slim.min.map" />
+    <Content Include="Scripts\Libs\jquery\jquery-3.3.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <TypeScriptCompile Include="Scripts\index.d.ts" />
+    <TypeScriptCompile Include="Scripts\Libs\popper\index.d.ts" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FuncionarioViewModel\FuncionarioViewModel.csproj">
+      <Project>{6F368E98-A7C7-49B0-8A1E-0EE01FD8B7D7}</Project>
+      <Name>FuncionarioViewModel</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{08b952a9-9f70-4f5f-9102-47b9b1000f4d}</Project>
       <Name>Models</Name>

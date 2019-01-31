@@ -4,11 +4,14 @@
     @Model List<Models.Privilegio> privilegios = (List<Models.Privilegio>)@ViewBag.Privilegios;
 }
 
+@section scripts{
+    <script src="~/Scripts/Privilegio/index.js"></script>
+}
+
 <h4>lista de Privilegios</h4>
 
-<a class="btn btn-outline-dark mb-2 float-lg-right" href="@Url.Action("Cadastro", "Privilegio")">Cadastrar</a>
 
-<table class="table table-hover table-striped table-bordered">
+<table id="tabela-privilegios" class="table table-hover table-striped table-bordered">
     <thead>
         <tr>
             <th>Codigo</th>
@@ -23,7 +26,7 @@
                 <td>@privilegio.Id</td>
                 <td>@privilegio.Nome</td>
                 <td>
-                    <a href="@Url.Action(/*actionName:*/ "Delete", /*controllerName:*/ "Privilegio" , /*routeValues:*/ new { id = privilegio.Id })">Apagar</a>
+                    <a href="@Url.Action(/*actionName:*/ "Editar", /*controllerName:*/ "Privilegio" , /*routeValues:*/ new { id = privilegio.Id })">Editar</a>
                 </td>
             </tr>
         }

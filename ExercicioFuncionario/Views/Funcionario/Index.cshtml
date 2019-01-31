@@ -1,14 +1,15 @@
-﻿
-@{
+﻿@{ 
     ViewBag.Title = "Index";
-    @Model List<Models.Funcionario> funcionarios = (List<Models.Funcionario>)@ViewBag.Funcionarios;
+    @Model List<Models.Funcionario> funcionarios = (List<Models.Funcionario>)ViewBag.Funcionarios; 
+}
+    
+@section scripts {
+    <script src="~/Scripts/funcionario/index.js"></script>
 }
 
 <h4>lista de Funcionarios</h4>
 
-<a class="btn btn-outline-dark mb-2 float-lg-right" href="@Url.Action("Cadastro", "Funcionario")">Cadastrar</a>
-
-<table class="table table-hover table-striped table-bordered">
+<table id="tabela-funcionarios" class="table table-hover table-striped table-bordered">
     <thead>
         <tr>
             <th>Codigo</th>
@@ -21,24 +22,8 @@
             <th>Ação</th>
         </tr>
     </thead>
-    <tbody>
-        @foreach (var funcionario in funcionarios)
-        {
-            <tr>
-                <td>@funcionario.Id</td>
-                <td>@funcionario.Privilegio.Nome</td>
-                <td>@funcionario.Nome</td>
-                <td>@funcionario.Login</td>
-                <td>@funcionario.Senha</td>
-                <td>@funcionario.Sexo</td>
-                <td>@funcionario.Salario</td>
-                <td>
-                    <a class="btn btn-outline-info" href="@Url.Action(/*actionName:*/ "Delete", /*controllerName:*/ "Funcionario" , /*routeValues:*/ new { id = funcionario.Id })">Apagar</a>
-                </td>
-            </tr>
-        }
-    </tbody>
-    <foot>
+    <tbody></tbody>
+    <tfoot>
         <tr>
             <th>Codigo</th>
             <th>Privilegio</th>
@@ -49,6 +34,5 @@
             <th>Salario</th>
             <th>Ação</th>
         </tr>
-    </foot>
+    </tfoot>
 </table>
-
